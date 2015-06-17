@@ -1,0 +1,6 @@
+Feature: Test auto discovey module
+
+Scenario: Lgin to GW
+Given I open login page
+Then i enter username and password
+And i login 

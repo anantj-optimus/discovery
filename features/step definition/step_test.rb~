@@ -1,0 +1,18 @@
+require 'watir-webdriver'
+browser = Watir::Browser.new
+
+Given /^I open login page$/ do
+browser.goto 'http://qa-cent6-64.groundwork.groundworkopensource.com'
+end
+
+Then /^i enter username and password$/ do
+@browser.text_field(:name => 'josso_username').set('admin')
+browser.text_field(:name => 'josso_password').set('admin')
+browser.button(:value,'Login').click
+end
+
+And /^i login$/ do
+#browser.text.include?('Getting started').should == true
+expect(browser.text.include?('Getting started')).to be true
+browser.close
+ end
